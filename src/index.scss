@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply font-poppins;
+  }
+  .page-container {
+    @apply max-w-[1300px] px-[15px] mx-auto w-full;
+  }
+  .img-cover {
+    @apply w-full h-full object-cover transition-all duration-500 group-hover:scale-110 rounded-md;
+  }
+  .loadingCircle {
+    @apply w-[100px] h-[100px] animate-spin rounded-full border-t-[10px] border-t-transparent border-[10px] border-solid border-blue-500;
+  }
+  @layer components {
+    .links {
+      font-size: 18px;
+      font-weight: 600;
+      position: relative;
+      transition: 0.2s linear;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        left: 0;
+        right: 0;
+        bottom: -3px;
+        transition: all 0.4s linear;
+        @apply bg-blue-500;
+      }
+      &:hover::before {
+        width: 100%;
+      }
+      &:hover {
+        @apply text-blue-500;
+      }
+    }
+    .btn-shinny-1 {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      user-select: none;
+      display: inline-block;
+      &:hover::before {
+        left: auto;
+        right: 0;
+        width: 100%;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: auto;
+        top: 0;
+        height: 100%;
+        width: 0;
+        background-color: #fff;
+        opacity: 0.1;
+        z-index: -1;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+    }
+    .btn-shinny-2 {
+      transition: all 0.5s ease;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+        0 2px 4px -2px rgb(0 0 0 / 0.1);
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.5);
+        width: 60px;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0.5s;
+        filter: blur(30px);
+        transform: translateX(-130px) skewX(-15deg);
+      }
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, 0);
+        width: 30px;
+        height: 100%;
+        left: 30px;
+        top: 0;
+        opacity: 0;
+        filter: blur(30px);
+        transform: translateX(-100px) skewX(-15deg);
+      }
+      &:hover {
+        background-color: #3b82f6;
+        color: white;
+        &::before {
+          transform: translateX(300px) skewX(-15deg);
+          opacity: 0.6;
+          transition: all linear 0.5s;
+        }
+        &::after {
+          transform: translateX(300px) skewX(-15deg);
+          opacity: 0.6;
+          transition: all linear 0.5s;
+        }
+      }
+    }
+  }
+}
+.swiper-slide {
+  height: auto;
+}
