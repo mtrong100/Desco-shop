@@ -1,6 +1,6 @@
 # Desco-shop
 create shopping web simple using react vite and tailwind css
-
+## Link: https://mtrong100.github.io/Desco-shop/
 
 ## Preview iamges
 ![image](https://user-images.githubusercontent.com/94778246/230707528-870fed97-8bd0-43d3-a624-abece8715849.png)
